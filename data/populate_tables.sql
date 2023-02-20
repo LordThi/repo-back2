@@ -51,7 +51,7 @@ INSERT INTO "product" ("name") VALUES
 ('colin'),
 
 INSERT INTO "brand" ("name") VALUES
-('Ferrero Rocher'),
+('Ferrero'),
 ('Panzani'),
 ('Materne'),
 ('Lactel'),

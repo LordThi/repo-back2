@@ -1,0 +1,33 @@
+{
+  "name": "projet-08-allint-back",
+  "version": "1.0.0",
+  "description": "Ce repository est le dossier consacré à la partie BACKEND du projet. Il permet le stockage, partage mais également versionning du code source de l'application. En plus du code, vous aurez également accès à la documentation, aux ressources et au détails de la partie BACKEND.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Maya/projet-08-allint-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Maya/projet-08-allint-back/issues"
+  },
+  "homepage": "https://github.com/O-clock-Maya/projet-08-allint-back#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "nodemon": "^2.0.20",
+    "pg": "^8.9.0",
+    "postgres": "^3.3.3",
+    "sequelize": "^6.28.0"
+  }
+}
