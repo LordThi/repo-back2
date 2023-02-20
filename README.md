@@ -33,3 +33,5 @@ Recommandation:
 commit naming : [un exemple que Thibaut utilise](https://buzut.net/cours/versioning-avec-git/bien-nommer-ses-commits)
 
 gitmoji : [Site](https://gitmoji.dev/) , [Github](https://github.com/carloscuesta/gitmoji)
+
+..
