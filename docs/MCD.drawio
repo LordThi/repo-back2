@@ -4,7 +4,11 @@
         <mxGraphModel dx="1147" dy="478" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
 =======
         <mxGraphModel dx="1147" dy="536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+<<<<<<< HEAD
 >>>>>>> 2e6d21ab33576b06e82cafa742dd4d3f7fd3af37
+=======
+>>>>>>> 7f04cc7 (création des tables sql)
+>>>>>>> 9d5df29 (rebase test)
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -44,7 +48,11 @@
 =======
                 <mxCell id="98" value="code" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="10" vertex="1">
                     <mxGeometry x="10" y="30" width="80" height="30" as="geometry"/>
+<<<<<<< HEAD
 >>>>>>> 2e6d21ab33576b06e82cafa742dd4d3f7fd3af37
+=======
+>>>>>>> 7f04cc7 (création des tables sql)
+>>>>>>> 9d5df29 (rebase test)
                 </mxCell>
                 <mxCell id="12" value="catégorie" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="40" y="560" width="160" height="200" as="geometry"/>
@@ -58,7 +66,11 @@
 =======
                 <mxCell id="99" value="code" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="12" vertex="1">
                     <mxGeometry x="10" y="40" width="80" height="30" as="geometry"/>
+<<<<<<< HEAD
 >>>>>>> 2e6d21ab33576b06e82cafa742dd4d3f7fd3af37
+=======
+>>>>>>> 7f04cc7 (création des tables sql)
+>>>>>>> 9d5df29 (rebase test)
                 </mxCell>
                 <mxCell id="14" value="Marque" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="600" y="560" width="160" height="200" as="geometry"/>
@@ -72,7 +84,11 @@
 =======
                 <mxCell id="101" value="code" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="14" vertex="1">
                     <mxGeometry x="10" y="40" width="80" height="30" as="geometry"/>
+<<<<<<< HEAD
 >>>>>>> 2e6d21ab33576b06e82cafa742dd4d3f7fd3af37
+=======
+>>>>>>> 7f04cc7 (création des tables sql)
+>>>>>>> 9d5df29 (rebase test)
                 </mxCell>
                 <mxCell id="16" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" parent="1" source="12" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -123,7 +139,11 @@
                 <mxCell id="100" value="code_produit" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="26" vertex="1">
 =======
                 <mxCell id="100" value="code" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="26" vertex="1">
+<<<<<<< HEAD
 >>>>>>> 2e6d21ab33576b06e82cafa742dd4d3f7fd3af37
+=======
+>>>>>>> 7f04cc7 (création des tables sql)
+>>>>>>> 9d5df29 (rebase test)
                     <mxGeometry x="15" y="30" width="80" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" target="30" edge="1">
