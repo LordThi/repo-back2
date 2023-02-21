@@ -14,7 +14,7 @@ INSERT INTO "user" ("lastname", "firstname", "email", "password") VALUES
 ('BLANC', 'Clitorine', 'clitorineblanc@gmail.com', 'cliclidu93'),
 ('PERRIN', 'Marie', 'marieperrin@gmail.com', 'azerty'),
 ('GIRAUD', 'Benjamin', 'benjamingiraud@gmail.com', 'motdepas$('),
-('QUEEN T', 'Tatiana', 'tatianaqueent@gmail.com' ,"oiuytrezwxcvbn,:;,bvcfgyhuiklm:;,"),
+('QUEEN T', 'Tatiana', 'tatianaqueent@gmail.com' ,"oiuytrezwxcvbnbvcfgyhuiklm"),
 ('MISTER T', 'Thibaut','MisterT@king.com', 'IamaKingoftheworld'),
 ('Monsieur D', 'Damien', 'damdamLeD@damien.com','erziyughjfsdwcxvbn'),
 ('Mademoiselle M', 'Mathilde', 'McommeMatou@gmail.com', 'miaou'),
