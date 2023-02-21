@@ -1,0 +1,4 @@
+%syntax-version=1.0.0
+%project=allint
+
+init 2023-02-21T14:06:01Z John Doe <john@doe.org> # création des tables
