@@ -1,4 +1,4 @@
-const { api } = require('../routers/api');
+const { allint } = require('../routers');
 
 const mainController = {
   async renderHomePage(req, res) {
