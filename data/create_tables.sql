@@ -2,6 +2,8 @@ BEGIN;
 
 DROP TABLE IF EXISTS "allint",
 "user",
+"role",
+"personal_list",
 "allergy",
 "product",
 "brand",
@@ -15,8 +17,24 @@ CREATE TABLE "user" (
     "firstname" text NULL,
     "email" text NOT NULL,
     "password" text NOT NULL,
+    "role_id" integer NOT NULL REFERENCES "role"("id"),
+    "personal_list_id" integer NOT NULL REFERENCES "personal_list"("id"),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ,
+);
+
+CREATE TABLE "role" (
+    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "user" text NOT NULL,
+    "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
+    "updated_at" TIMESTAMPTZ
+);
+
+CREATE TABLE "personal_list" (
+    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "name" text NOT NULL,
+    "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
+    "updated_at" TIMESTAMPTZ
 );
 
 CREATE TABLE "allergy" (
@@ -29,6 +47,11 @@ CREATE TABLE "allergy" (
 CREATE TABLE "product" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" text NOT NULL,
+    "product_picture" TEXT NOT NULL,
+    "ingredients_picture" TEXT NOT NULL,
+    "ingredients" TEXT NOT NULL,
+    "category_id" integer NOT NULL REFERENCES "category"("id"),
+    "brand_id" integer NOT NULL REFERENCES "brand"("id"),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ
 );
