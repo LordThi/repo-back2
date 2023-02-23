@@ -1,3 +1,5 @@
+/* création du server */
+
 require('dotenv').config();
 
 const express = require('express');
