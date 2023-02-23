@@ -5,7 +5,7 @@ const emailValidator = require('email-validator');
 const bcrypt = require('bcrypt');
 
 const userController = {
-// Lorsqu'on souhaite notifier JS qu'un paramètre ne sera pas utilisé, on peut mettre "_" à la place
+
   async signupPage(req, res) {
     res.render('signup');
   },
