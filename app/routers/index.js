@@ -4,7 +4,7 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/allint', (req, res) => {
+router.get('/allint', (_, res) => {
 
 });
 
