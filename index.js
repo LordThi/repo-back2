@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const debug = require('debug')('allint:server');
 const http = require('http');
 const logger = require('./app/helpers/logger');

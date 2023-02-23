@@ -10,7 +10,7 @@ const categoryController = {
             const category = await category.findByPk(categoryId, {
                 include: [
                   'id',
-               'name',
+                  'name',
               {
                 association: 'allergy',
                 include: ['product','brand']
