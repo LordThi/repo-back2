@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const mainController = require('./app/controllers/mainController');
+const allintController = require('./app/controllers/allintController');
 const userController = require('./app/controllers/userController');
 const allergyController = require('./app/controllers/allergyController');
 const brandController = require('./app/controllers/brandController');

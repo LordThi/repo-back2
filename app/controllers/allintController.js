@@ -1,9 +1,9 @@
 const { allint } = require('../routers');
 
-const mainController = {
+const allintController = {
   async renderHomePage(req, res) {
     res.render('home');
   },
 };
 
-module.exports = mainController;
+module.exports = allintController;
