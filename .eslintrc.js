@@ -1,8 +1,8 @@
 module.exports = {
   env: {
-    browser: true,
     commonjs: true,
     es2021: true,
+    node: true,
   },
   extends: 'airbnb-base',
   overrides: [
@@ -11,10 +11,5 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    import:no-extraneous-dependencies, [
-      'error',
-      devDependencies, [true,] 
-    ]:
-
   },
 };
