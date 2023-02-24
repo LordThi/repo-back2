@@ -1,7 +1,7 @@
 const allintController = {
-  get(req, res) => {
+  homePage: (req, res) => {
     res.send('hello word');
-  }
+  },
 };
 
 module.exports = allintController;
