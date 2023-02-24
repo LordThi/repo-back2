@@ -1,10 +1,10 @@
-/* creation du router */
-
 const express = require('express');
-const allintController = require('../controllers/allintController');
+// const allintController = require('../controllers/allintController');
 
 const router = express.Router();
 
-router.get('/', allintController.get);
+router.get('/', (req, res) => {
+  res.send('hello word');
+});
 
 module.exports = router;
