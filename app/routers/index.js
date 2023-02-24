@@ -5,6 +5,6 @@ const allintController = require('../controllers/allintController');
 
 const router = express.Router();
 
-router.get('/allint', allintController.get);
+router.get('/', allintController.get);
 
 module.exports = router;
