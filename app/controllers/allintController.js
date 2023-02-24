@@ -1,6 +1,6 @@
 const allintController = {
-  get(_, res) {
-    res.send();
+  home(req, res) {
+    res.render('/');
   },
 };
 
