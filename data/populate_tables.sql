@@ -1,6 +1,6 @@
 BEGIN;
 
-ALTER TABLE "" DROP CONSTRAINT ;
+ALTER TABLE "allint" DROP CONSTRAINT ;
 
 
 INSERT INTO "user" ("lastname", "firstname", "email", "password") VALUES
