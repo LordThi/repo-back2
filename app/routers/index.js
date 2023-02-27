@@ -10,7 +10,7 @@ ROUTES A CREER
 user (post)
   user/role
   user/personal_list
-allergy (post) ?? crréation d'un fichier JSON pour les 14 allergies ou DB interne ou une API ??
+allergy (post) ?? création d'un fichier JSON pour les 14 allergies ou DB interne ou une API ??
 
 lié à une API
 product
