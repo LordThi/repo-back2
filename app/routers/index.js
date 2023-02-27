@@ -4,6 +4,7 @@ const loginController = require('../controllers/loginController');
 const brandController = require('../controllers/brandController');
 const productController = require('../controllers/productController');
 const categoryController = require('../controllers/categoryController');
+const allergyController = require('../controllers/allergyController');
 
 const router = express.Router();
 
@@ -21,10 +22,11 @@ router.get('/search_product', productController.productPage);
 
 // route search catégorie
 router.get('/search_category', categoryController.categoryPage);
-/*
-// route allergie
-router.get('/allergy', allergyController);
 
+// route allergie
+router.get('/allergy', allergyController.allergyPage);
+
+/*
 ROUTES A CREER
 user (post)
   user/role
