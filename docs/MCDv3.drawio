@@ -53,6 +53,9 @@
                 <mxCell id="20" value="code_allergies" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="18" vertex="1">
                     <mxGeometry x="10" y="30" width="110" height="30" as="geometry"/>
                 </mxCell>
+                <mxCell id="63" value="allergens" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="18">
+                    <mxGeometry x="10" y="85" width="80" height="30" as="geometry"/>
+                </mxCell>
                 <mxCell id="21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;endArrow=none;endFill=0;" parent="1" source="36" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="640" y="270" as="targetPoint"/>

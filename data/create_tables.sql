@@ -18,7 +18,6 @@ CREATE TABLE "user" (
     "email" text NOT NULL,
     "password" text NOT NULL,
     "role_id" integer NOT NULL REFERENCES "role"("id"),
-    "personal_list_id" integer NOT NULL REFERENCES "personal_list"("id"),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ,
 );
@@ -34,6 +33,7 @@ CREATE TABLE "role" (
 CREATE TABLE "allergy" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" text NOT NULL,
+    "allergens" BOOLEAN NOT NULL,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ
 );
@@ -60,23 +60,6 @@ CREATE TABLE "brand" (
 CREATE TABLE "category" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" text NOT NULL,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
-    "updated_at" TIMESTAMPTZ
-);
-
-CREATE TABLE "user_allergy" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
-    "updated_at" TIMESTAMPTZ
-);
-
-CREATE TABLE "allergy_product" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
-    "updated_at" TIMESTAMPTZ
-);
-CREATE TABLE "product_brand" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ
 );
