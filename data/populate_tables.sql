@@ -21,21 +21,21 @@ INSERT INTO "user" ("lastname", "firstname", "email", "password") VALUES
 ('Mister G', 'Geoffroy', 'MG@gg.com', 'MisterG'),
 
 
-INSERT INTO "allergens" ("name") VALUES
-('Céréales contenant du gluten (blé, seigle, orge, avoine, épeautre, kamut ou leurs souches hybridées) et produits à base de ces céréales'),
-('crustacés et produits à base de crustacés'),
-('Œufs et produits à base d’œufs'),
-('Arachides et produits à base d''arachides'),
-('Poissons et produits à base de poissons'),
-('Soja et produits à base de soja'),
-('Lait et produits à base de lait (y compris de lactose)'),
-('Fruits à coques (amandes, noisettes, noix, noix de cajou, pécan, macadamia, du Brésil, du Queensland, pistaches) et produits à base de ces fruits'),
-('Céleri et produits à base de céleri'),
-('Moutarde et produits à base de moutarde'),
-('Graines de sésame et produits à base de graines de sésame'),
-('Anhydride sulfureux et sulfites en concentration de plus de 10 mg/kg ou 10 mg/l'),
-('Lupin et produits à base de lupin'),
-('Mollusques et produits à base de mollusques'),
+INSERT INTO "allergy" ("name", "allergens") VALUES
+('Céréales contenant du gluten (blé, seigle, orge, avoine, épeautre, kamut ou leurs souches hybridées) et produits à base de ces céréales', TRUE),
+('crustacés et produits à base de crustacés', TRUE),
+('Œufs et produits à base d’œufs', TRUE),
+('Arachides et produits à base d''arachides', TRUE),
+('Poissons et produits à base de poissons', TRUE),
+('Soja et produits à base de soja', TRUE),
+('Lait et produits à base de lait (y compris de lactose)', TRUE),
+('Fruits à coques (amandes, noisettes, noix, noix de cajou, pécan, macadamia, du Brésil, du Queensland, pistaches) et produits à base de ces fruits', TRUE),
+('Céleri et produits à base de céleri', TRUE),
+('Moutarde et produits à base de moutarde', TRUE),
+('Graines de sésame et produits à base de graines de sésame', TRUE),
+('Anhydride sulfureux et sulfites en concentration de plus de 10 mg/kg ou 10 mg/l', TRUE),
+('Lupin et produits à base de lupin', TRUE),
+('Mollusques et produits à base de mollusques', TRUE),
 
 
 INSERT INTO "product" ("name") VALUES

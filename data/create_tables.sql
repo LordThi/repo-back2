@@ -51,7 +51,7 @@ CREATE TABLE "category" (
 );
 
 CREATE TABLE "product" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    "id" INT NOT NULL UNIQUE,
     "name" text NOT NULL,
     "product_picture" TEXT NOT NULL,
     "ingredients_picture" TEXT NOT NULL,
