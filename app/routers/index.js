@@ -29,8 +29,12 @@ router.get('/allergy', allergyController.allergyPage);
 /*
 ROUTES A CREER
 user (post)
+router.post('/user', userController.userPage)
   user/role
+router.post('/user/:role_id', userController.userRoleIdPage)
   user/personal_list
+router.post('/user/:personal_list_id', userController.personalList)
+
 allergy (post) ?? création d'un fichier JSON pour les 14 allergies ou DB interne ou une API ??
 
 lié à une API

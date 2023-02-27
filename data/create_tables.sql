@@ -13,8 +13,8 @@ DROP TABLE IF EXISTS "allint",
 
 CREATE TABLE "user" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "lastname" text NULL,
-    "firstname" text NULL,
+    "lastname" text NOT NULL,
+    "firstname" text NOT NULL,
     "email" text NOT NULL,
     "password" text NOT NULL,
     "role_id" integer NOT NULL REFERENCES "role"("id"),
@@ -30,12 +30,6 @@ CREATE TABLE "role" (
     "updated_at" TIMESTAMPTZ
 );
 
-CREATE TABLE "personal_list" (
-    "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    "name" text NOT NULL,
-    "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
-    "updated_at" TIMESTAMPTZ
-);
 
 CREATE TABLE "allergy" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
