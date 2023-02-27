@@ -2,9 +2,6 @@
 
 BEGIN;
 
-<<<<<<< HEAD
--- XXX Add DDLs here.
-=======
 DROP TABLE IF EXISTS "allint",
 
 "role",
@@ -84,6 +81,5 @@ CREATE TABLE "allergy_product" (
    "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
    "updated_at" timestamptz
 );
->>>>>>> 37f28424a8f018656ea3d425a9b9b32118e0bae9
 
 COMMIT;
