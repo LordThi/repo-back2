@@ -1,6 +1,9 @@
+-- Deploy allint:init to pg
+
 BEGIN;
 
 DROP TABLE IF EXISTS "allint",
+
 "role",
 "user",
 "allergy",
@@ -9,6 +12,7 @@ DROP TABLE IF EXISTS "allint",
 "product",
 "user_allergy",
 "allergy_product";
+
 
 CREATE TABLE "role" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

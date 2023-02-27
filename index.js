@@ -1,15 +1,15 @@
 require('dotenv').config();
 
-const debug = require('debug')('allint:server');
-const http = require('http');
+const express = require('express');
 const logger = require('./app/helpers/logger');
-const app = require('./app');
+const router = require('./app/routers/index');
 
-const port = process.env.PORT ?? 3000;
+const port = process.env.PORT || 3000;
 
-const server = http.createServer(app);
+const app = express();
 
-server.listen(port, () => {
-  logger.info('HTTP server ready');
-  debug(`Server ready: http://localhost:${port}`);
+app.use(router);
+
+app.listen(port, () => {
+  logger.log(`Server ready: http://localhost:${port}`);
 });

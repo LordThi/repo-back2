@@ -1,3 +1,8 @@
 %syntax-version=1.0.0
 %project=allint
 
+<<<<<<< HEAD
+init 2023-02-27T15:47:26Z geoffroy Poupart <geoffroypoupart@gmail.com> # création des tables
+=======
+init 2023-02-27T15:11:36Z allint <allint@oclock.io> # création des tables
+>>>>>>> 37f28424a8f018656ea3d425a9b9b32118e0bae9

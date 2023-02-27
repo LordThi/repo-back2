@@ -1,9 +1,11 @@
 module.exports = {
   env: {
-    browser: true,
     commonjs: true,
     es2021: true,
+    node: true,
+    'jest/globals': true,
   },
+  plugins: ['jest'],
   extends: 'airbnb-base',
   overrides: [
   ],
@@ -11,10 +13,10 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    import:no-extraneous-dependencies, [
-      'error',
-      devDependencies, [true,] 
-    ]:
-
+    'jets/no-disabled-tests': 'warn',
+    'jets/no-focused-tests': 'error',
+    'jets/no-identical-title': 'error',
+    'jest/prefer-to-have-length': 'warn',
+    'jest/valid-expect': 'error',
   },
 };

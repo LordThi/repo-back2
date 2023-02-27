@@ -1,9 +1,9 @@
 BEGIN;
 
-ALTER TABLE "" DROP CONSTRAINT ;
+ALTER TABLE "allint" DROP CONSTRAINT ;
 
 
-INSERT INTO "user" ("lastname", "firstname", "email", "password") VALUES 
+INSERT INTO "user" ("lastname", "firstname", "email", "password") VALUES
 ('DURAND', 'Alexandre', 'alexandredurand@gmail.com', 'gdsKLHFGd36'),
 ('LEFEBVRE', 'Julie', 'julielefebvre@gmail.com', 'juelrieren97'),
 ('ROUX', 'Nicolas', 'nicolasroux@hotmail.fr', 'ùmlkjhgfdsqSDFGHJKLKKKJHDFDXGC'),
@@ -21,7 +21,7 @@ INSERT INTO "user" ("lastname", "firstname", "email", "password") VALUES
 ('Mister G', 'Geoffroy', 'MG@gg.com', 'MisterG'),
 
 
-INSERT INTO "allergens" ("name") VALUES 
+INSERT INTO "allergens" ("name") VALUES
 ('Céréales contenant du gluten (blé, seigle, orge, avoine, épeautre, kamut ou leurs souches hybridées) et produits à base de ces céréales'),
 ('crustacés et produits à base de crustacés'),
 ('Œufs et produits à base d’œufs'),

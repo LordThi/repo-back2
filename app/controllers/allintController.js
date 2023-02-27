@@ -1,8 +1,6 @@
-const { allint } = require('../routers');
-
 const allintController = {
-  async renderHomePage(req, res) {
-    res.render('home');
+  homePage: (req, res) => {
+    res.send('hello word');
   },
 };
 
