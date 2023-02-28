@@ -2,6 +2,6 @@
 
 BEGIN;
 
-DROP TABLE "allergy_product", "user_allergy", "product", "category", "brand", "allergy", "user", "role";
+DROP TABLE IF EXISTS "allergy_product", "user_allergy", "product", "category", "brand", "allergy", "user", "role";
 
 COMMIT;
