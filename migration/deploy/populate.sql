@@ -1,3 +1,4 @@
+-- Deploy allint:populate to pg
 BEGIN;
 
 INSERT INTO "role" ("name") VALUES
@@ -37,14 +38,13 @@ INSERT INTO "allergy" ("name", "allergens") VALUES
 ('Anhydride sulfureux et sulfites en concentration de plus de 10 mg/kg ou 10 mg/l', TRUE),
 ('Lupin et produits à base de lupin', TRUE),
 ('Mollusques et produits à base de mollusques', TRUE),
-('Ketchup', FALSE),
+('tomate', FALSE),
 ('Choux', FALSE);
 
 INSERT INTO "user_allergy" ("user_id", "allergy_id") VALUES
 (1, 15),
 (1, 4),
 (1, 16);
-
 
 INSERT INTO "brand" ("name") VALUES
 ('Ferrero'),
@@ -76,7 +76,7 @@ INSERT INTO "category" ("name") VALUES
 INSERT INTO "product" ("id", "name", "product_picture", "ingredients_picture", "ingredients", "category_id", "brand_id") VALUES
 ('3017620425035', 'Nutella', 'https://images.openfoodfacts.org/images/products/301/762/042/5035/front_fr.427.400.jpg', 'https://images.openfoodfacts.org/images/products/301/762/042/5035/ingredients_fr.423.400.jpg', 'Sucre, huile de palme, NOISETTES 13%, LAIT écrémé en poudre 8,7%, cacao maigre 7,4%, émulsifiants: lécithines [SOJA]; vanilline, Lait, Fruits à coque, Soja', 1, 1),
 ('3038350013606', 'Torti', 'https://images.openfoodfacts.org/images/products/303/835/001/3606/front_fr.120.400.jpg', 'https://images.openfoodfacts.org/images/products/303/835/001/3606/ingredients_fr.89.400.jpg', '100% semoule de blé dur de qualité supérieure, Gluten', 2, 2),
-('8715700017006', 'ketchup', 'https://images.openfoodfacts.org/images/products/871/570/001/7006/front_fr.58.400.jpg', 'https://images.openfoodfacts.org/images/products/871/570/001/7006/ingredients_fr.40.400.jpg', 'Tomates (148 g pour 100 g de Tomato Ketchup), vinaigre, sucre, sel, extraits d''épices et d''herbes (contiennent du céleri), épice, allergènes : Céleri, traces : Céleri', 3, 3);
+('8715700017006', 'ketchup', 'https://images.openfoodfacts.org/images/products/871/570/001/7006/front_fr.58.400.jpg', 'https://images.openfoodfacts.org/images/products/871/570/001/7006/ingredients_fr.40.400.jpg', 'tomates (148 g pour 100 g de Tomato Ketchup), vinaigre, sucre, sel, extraits d''épices et d''herbes (contiennent du céleri), épice, allergènes : Céleri, traces : Céleri', 3, 3);
 /*
 ('Lait'),
 ('Chocapic'),
