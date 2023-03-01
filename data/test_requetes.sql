@@ -1,14 +1,25 @@
 /*CRUD USER*/
-/*inserer un user*/
-INSERT INTO "user" ("lastname", "firstname", "email", "password", "role_id") VALUES ('TEST', 'TEST', 'TEST@gmail.com', 'TEST', 2);
 
-/*afficher les allergènes de base*/
-SELECT * FROM "allergy" WHERE "allergens" = TRUE;
+/*insérer un nouvel utilisateur*/
+INSERT INTO "user" ("lastname", "firstname", "email", "password", "role_id") VALUES ('TEST', 'TEST', 'TEST3@gmail.com', 'TEST', 2);
+
+/*modifier un utilisateur (route patch)*/
+UPDATE "user"
+SET "email" = 'tt@gmail.com', "firstname" = 'tt', "lastname" = 'TT', "password" = '5566'
+WHERE id = 17;
+
+/*supprimer un utilisateur (route delete)*/
+DELETE FROM "user" WHERE "id" = 19;
 
 
+
+/*afficher les utilisateurs*/
 SELECT * FROM "user";
 
 
+
+/*afficher les allergènes de base*/
+SELECT * FROM "allergy" WHERE "allergens" = TRUE;
 
 /*supprimer une allergie*/
 DELETE FROM "user_allergy" WHERE "allergy_id" = 4 AND "user_id" = 1;

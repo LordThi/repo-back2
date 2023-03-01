@@ -5,7 +5,7 @@ const brandController = require('../controllers/brandController');
 const productController = require('../controllers/productController');
 const categoryController = require('../controllers/categoryController');
 const allergyController = require('../controllers/allergyController');
-const registerController = require('../controllers/registerController');
+const profilController = require('../controllers/profilController');
 
 const router = express.Router();
 
@@ -13,10 +13,13 @@ const router = express.Router();
 router.get('/', allintController.homePage);
 
 // route pour enregistrer un nouvel utilisateur
-router.post('/register', registerController.registerUser);
+router.post('/register', profilController.registerUser);
 
 // route de login
 router.get('/login', loginController.loginPage);
+
+router.patch('/profil', profilController.updateUser);
+router.delete('/profil', profilController.deleteUser);
 
 // route search marque
 router.get('/search_brand', brandController.brandPage);
@@ -32,19 +35,10 @@ router.get('/allergy', allergyController.allergyPage);
 
 /*
 ROUTES A CREER
-user (post)
-router.post('/user', userController.userPage)
-  user/role
-router.post('/user/:role_id', userController.userRoleIdPage)
-  user/personal_list
-router.post('/user/:personal_list_id', userController.personalList)
-
-allergy (post) ?? création d'un fichier JSON pour les 14 allergies ou DB interne ou une API ??
-
-lié à une API
-product
-category
-brand
+(get)
+router.get('/register',adminController)
+(post)
+router.post('/register',adminController)
 */
 
 module.exports = router;

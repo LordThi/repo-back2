@@ -12,6 +12,48 @@ const registerDataMapper = {
       const result = await client.query(query);
       return result;
     } catch (error) {
+      console.log(error);
+      return false;
+    }
+  },
+  update: async (info) => {
+    const query = {
+      text: `UPDATE "user"
+      SET "email" = $1, "firstname" = $2, "lastname" = $3, "password" = $4
+      WHERE id = 1;`,
+      values: [info.email, info.firstname, info.lastname, info.password],
+    };
+    try {
+      const result = await client.query(query);
+      if (result.rowCount === 0) {
+        // eslint-disable-next-line no-throw-literal
+        throw ({
+          detail: "cet utilisateur n'existe pas et n'a pu être modifié",
+        });
+      }
+      return {
+        message: 'modification(s) enregistrée(s)',
+        isError: false,
+      };
+    } catch (error) {
+      console.log(error);
+      return {
+        message: error.detail,
+        isError: true,
+      };
+    }
+  },
+  delete: async (fakeId) => {
+    const query = {
+      text: 'DELETE FROM "user" WHERE "id" = $1;',
+      values: [fakeId],
+    };
+
+    try {
+      const result = await client.query(query);
+      return result;
+    } catch (error) {
+      console.log(error);
       return false;
     }
   },
