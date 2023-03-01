@@ -27,6 +27,7 @@ WHERE "ingredients" LIKE '%tomate%';
 
 /*essai -- fonctionnelle mais ne transmet rien*/
 SELECT * FROM "product"
-JOIN "allergy_product" ON "allergy_product"."product_id" = "product"."id"
-JOIN "allergy" ON "allergy_product"."allergy_id" = "allergy"."id"
-WHERE "product"."id" = "product_id";
+LEFT JOIN "allergy_product" ON "allergy_product"."product_id" = "product"."id"
+LEFT JOIN "allergy" ON "allergy_product"."allergy_id" = "allergy"."id"
+WHERE "product"."id" = '3017620425035';
+

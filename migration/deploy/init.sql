@@ -25,7 +25,7 @@ CREATE TABLE "user" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "lastname" text NOT NULL,
     "firstname" text NOT NULL,
-    "email" text NOT NULL,
+    "email" text NOT NULL UNIQUE,
     "password" text NOT NULL,
     "role_id" integer NOT NULL REFERENCES "role"("id"),
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),

@@ -5,11 +5,17 @@ const brandController = require('../controllers/brandController');
 const productController = require('../controllers/productController');
 const categoryController = require('../controllers/categoryController');
 const allergyController = require('../controllers/allergyController');
+const registerController = require('../controllers/registerController');
+
 
 const router = express.Router();
 
 // route de la home page
 router.get('/', allintController.homePage);
+
+// route pour enregistrer un nouvel utilisateur
+router.get('/register', registerController.registerUser);
+
 
 // route de login
 router.get('/login', loginController.loginPage);
