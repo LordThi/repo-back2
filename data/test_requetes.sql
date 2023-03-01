@@ -6,6 +6,8 @@ INSERT INTO "user" ("lastname", "firstname", "email", "password", "role_id") VAL
 SELECT * FROM "allergy" WHERE "allergens" = TRUE;
 
 
+SELECT * FROM "user";
+
 
 
 /*supprimer une allergie*/

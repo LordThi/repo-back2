@@ -7,15 +7,13 @@ const categoryController = require('../controllers/categoryController');
 const allergyController = require('../controllers/allergyController');
 const registerController = require('../controllers/registerController');
 
-
 const router = express.Router();
 
 // route de la home page
 router.get('/', allintController.homePage);
 
 // route pour enregistrer un nouvel utilisateur
-router.get('/register', registerController.registerUser);
-
+router.post('/register', registerController.registerUser);
 
 // route de login
 router.get('/login', loginController.loginPage);
@@ -29,7 +27,7 @@ router.get('/search_product', productController.productPage);
 // route search catégorie
 router.get('/search_category', categoryController.categoryPage);
 
-// route allergie
+// route allergie 14 par défaut
 router.get('/allergy', allergyController.allergyPage);
 
 /*
