@@ -46,6 +46,7 @@ CREATE TABLE "brand" (
 CREATE TABLE "category" (
     "id" INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     "name" text NOT NULL,
+    "allergens" text BOOLEAN,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
     "updated_at" TIMESTAMPTZ
 );

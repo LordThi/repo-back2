@@ -1,6 +1,13 @@
+const searchDataMapper = require('../dataMapper/searchDataMapper');
+
 const allergyController = {
-  allergyPage: (req, res) => {
-    res.send('ici la page des ALLERGIES');
+  allergyPage: async (req, res) => {
+    const allergy = req.body;
+    // console.log(allergy);
+    const result = await searchDataMapper.select(allergy);
+    if (result) {
+      res.send('ALLERGIE(S) SELECTIONNEE(S)');
+    }
   },
 };
 
