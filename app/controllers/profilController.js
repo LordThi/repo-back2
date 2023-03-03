@@ -1,4 +1,4 @@
-const registerDataMapper = require('../dataMapper/registerDataMapper');
+const registerDataMapper = require('../dataMappers/registerDataMapper');
 
 const profilController = {
   registerUser: async (req, res) => {
