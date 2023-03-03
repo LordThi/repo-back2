@@ -1,11 +1,13 @@
 const express = require('express');
 const allintController = require('../controllers/allintController');
-const loginController = require('../controllers/loginController');
 const brandController = require('../controllers/brandController');
 const productController = require('../controllers/productController');
 const categoryController = require('../controllers/categoryController');
 const allergyController = require('../controllers/allergyController');
 const profilController = require('../controllers/profilController');
+const isLogger = require('../middlewares/isLogger');
+const isValid = require('../middlewares/isValid');
+const { login } = require('../validators/profil');
 
 const router = express.Router();
 
@@ -16,10 +18,10 @@ router.get('/', allintController.homePage);
 router.post('/register', profilController.registerUser);
 
 // route de login
-router.get('/login', loginController.loginPage);
+router.post('/login', isValid(login), profilController.loginUser);
 
-router.patch('/profil', profilController.updateUser);
-router.delete('/profil', profilController.deleteUser);
+router.patch('/profil', isLogger(), profilController.updateUser);
+router.delete('/profil', isLogger(), profilController.deleteUser);
 
 // route search marque
 router.get('/search_brand', brandController.brandPage);
@@ -31,14 +33,8 @@ router.get('/search_product', productController.productPage);
 router.get('/search_category', categoryController.categoryPage);
 
 // route allergie 14 par défaut
-router.get('/allergy', allergyController.allergyPage);
-
-/*
-ROUTES A CREER
-(get)
-router.get('/register',adminController)
-(post)
-router.post('/register',adminController)
-*/
+// router.get('/allergy', allergyController.getAll);
+router.get('/allergy/user', isLogger(), allergyController.getFromUser);
+router.post('/allergy/user', isLogger(), allergyController.postForUser);
 
 module.exports = router;

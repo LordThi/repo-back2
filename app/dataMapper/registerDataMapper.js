@@ -57,5 +57,19 @@ const registerDataMapper = {
       return false;
     }
   },
+  login: async (email, password) => {
+    const query = {
+      text: 'SELECT * FROM "user" WHERE "email" = $1 AND "password" = $2',
+      values: [email, password],
+    };
+
+    try {
+      const result = await client.query(query);
+      return result;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  },
 };
 module.exports = registerDataMapper;
