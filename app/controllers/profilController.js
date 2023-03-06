@@ -1,10 +1,39 @@
+<<<<<<< HEAD
 const registerDataMapper = require('../dataMappers/registerDataMapper');
+=======
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const registerDataMapper = require('../dataMapper/registerDataMapper');
+>>>>>>> 088f507aa003d27ab488d12f5032a302f71a247a
 
 const profilController = {
+  loginUser: async (req, res) => {
+    const { email, password } = req.body;
+    // reste à hasher le mdp
+    const saltRounds = 10;
+
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hash = await bcrypt.hash(password, salt);
+
+    const result = await registerDataMapper.login(email, hash);
+    if (result) {
+      // utilsateur a été trouvé
+      const token = jwt.sign({ userId: result.userId }, process.env.JWT_SECRET);
+      res.send(token);
+    } else {
+      // utilisateur n'a pas été trouvé
+      res.status(401).json({ error: 'user or password is not found' });
+    }
+  },
+
   registerUser: async (req, res) => {
     const newUser = req.body;
 
     // reste à hasher le mdp
+    const saltRounds = 10;
+
+    const salt = await bcrypt.genSalt(saltRounds);
+    newUser.password = await bcrypt.hash(newUser.password, salt);
 
     const result = await registerDataMapper.register(newUser);
 

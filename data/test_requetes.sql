@@ -1,7 +1,7 @@
 /*CRUD USER*/
 
 /*insérer un nouvel utilisateur*/
-INSERT INTO "user" ("lastname", "firstname", "email", "password", "role_id") VALUES ('TEST', 'TEST', 'TEST3@gmail.com', 'TEST', 2);
+INSERT INTO "user" ("lastname", "firstname", "email", "password", "role_id") VALUES ('TEST', 'TEST', 'testlogin@gmail.com', '$2a$10$HTnyJQn89Yi/pybWv5Oj6.m5uGBv35OYWyTOGVVMd2cUZilzw1fX2', 2);
 
 /*modifier un utilisateur (route patch)*/
 UPDATE "user"
