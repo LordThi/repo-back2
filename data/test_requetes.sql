@@ -2,7 +2,7 @@
 /*CRUD USER*/
 
 /*insérer un nouvel utilisateur*/
-INSERT INTO "user" ("lastname", "firstname", "email", "password", "role_id") VALUES ('TEST', 'TEST', 'testlogin@gmail.com', '$2a$10$HTnyJQn89Yi/pybWv5Oj6.m5uGBv35OYWyTOGVVMd2cUZilzw1fX2', 2);
+INSERT INTO "user" ("lastname", "firstname", "email", "password", "role_id") VALUES ('TEST1', 'TEST1', 'test1login@gmail.com', '12345', 2);
 
 /*modifier un utilisateur (route patch)*/
 UPDATE "user"
@@ -20,6 +20,9 @@ SELECT * FROM "user";
 
 /*afficher les allergènes de base*/
 SELECT * FROM "allergy" WHERE "allergens" = TRUE;
+
+/*inserer une allergy*/
+INSERT INTO "user_allergy" ("user_id", "allergy_id") VALUES (1, 15);
 
 /*supprimer une allergie*/
 DELETE FROM "user_allergy" WHERE "allergy_id" = 4 AND "user_id" = 1;

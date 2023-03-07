@@ -24,6 +24,15 @@ const allergyController = {
       res.send('success');
     }
   },
+  // supprimer une allergie de l'utilisateur
+  deleteOneAllergy: async (req, res) => {
+    const { allergyId } = req.body;
+    const { userId } = req.token;
+    const result = await searchDataMapper.delete(allergyId, userId);
+    if (result) {
+      res.send('success');
+    }
+  },
 };
 
 module.exports = allergyController;
