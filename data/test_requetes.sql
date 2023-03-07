@@ -21,6 +21,9 @@ SELECT * FROM "user";
 /*afficher les allergènes de base*/
 SELECT * FROM "allergy" WHERE "allergens" = TRUE;
 
+/*inserer une allergie*/
+INSERT INTO "user_allergy" ("user_id", "allergy_id") VALUES (1, 4);
+
 /*supprimer une allergie*/
 DELETE FROM "user_allergy" WHERE "allergy_id" = 4 AND "user_id" = 1;
 
