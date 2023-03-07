@@ -6,7 +6,7 @@ const profilController = {
   loginUser: async (req, res) => {
     const { email, password } = req.body;
     // reste à hasher le mdp
-    const saltRounds = 10;
+    // const saltRounds = 10;
 
     // on récupère le mdp hashé qui correspond à cet email
     const hash = await registerDataMapper.getHash(email);
@@ -52,6 +52,11 @@ const profilController = {
   },
   updateUser: async (req, res) => {
     const infoUserToUpdate = req.body;
+
+    const saltRounds = 10;
+
+    const salt = await bcrypt.genSalt(saltRounds);
+    infoUserToUpdate.password = await bcrypt.hash(infoUserToUpdate.password, salt);
 
     const result = await registerDataMapper.update(infoUserToUpdate);
 

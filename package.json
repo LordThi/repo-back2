@@ -13,8 +13,7 @@
   "devDependencies": {
     "eslint": "^8.34.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jest": "^27.2.1"
+    "eslint-plugin-import": "^2.27.5"
   },
   "name": "back",
   "description": "Ce repository est le dossier consacré à la partie BACKEND du projet. Il permet le stockage, partage mais également versionning du code source de l'application. En plus du code, vous aurez également accès à la documentation, aux ressources et au détails de la partie BACKEND.",
