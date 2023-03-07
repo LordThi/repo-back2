@@ -2,6 +2,6 @@
 
 BEGIN;
 
--- XXX Add DDLs here.
+DROP TABLE IF EXISTS "allergy_product", "user_allergy", "product", "category", "brand", "allergy", "user", "role";
 
 COMMIT;
