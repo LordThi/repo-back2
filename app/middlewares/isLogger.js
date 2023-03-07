@@ -14,9 +14,9 @@ module.exports = function () {
       const token = req.headers.authorization.replace('Bearer ', '');
       // verify a token symmetric
       // {userid: 1, expire: 251452214414}
+
       jwt.verify(token, process.env.JWT_SECRET, (error, decoded) => {
       // TODO Verifier si le token est expire
-
         if (!error) {
           req.token = decoded;
           next();

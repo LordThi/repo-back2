@@ -18,6 +18,7 @@ router.get('/', allintController.homePage);
 router.post('/register', profilController.registerUser);
 
 // route de login
+router.get('/profil', isLogger(), profilController.getUser);
 router.post('/login', isValid(login), profilController.loginUser);
 
 router.patch('/profil', isLogger(), profilController.updateUser);
