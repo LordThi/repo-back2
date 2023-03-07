@@ -12,13 +12,23 @@ const profilController = {
     // reste à hasher le mdp
     const saltRounds = 10;
 
-    const salt = await bcrypt.genSalt(saltRounds);
-    const hash = await bcrypt.hash(password, salt);
+    // on récupère le mdp hashé qui correspond à cet email
+    const hash = await registerDataMapper.getHash(email);
 
-    const result = await registerDataMapper.login(email, hash);
+    // on compare le mdp envoyé par le front et le mdp hashé
+    const checkPassword = await bcrypt.compare(password, hash.password);
+
+    if (!checkPassword) {
+      res.status(401).json({ error: 'user or password is not found' });
+    }
+
+    // on récupère l'user car les mdp correspondent
+    const result = await registerDataMapper.login(email);
+
     if (result) {
       // utilsateur a été trouvé
-      const token = jwt.sign({ userId: result.userId }, process.env.JWT_SECRET);
+
+      const token = jwt.sign({ userId: result.id }, process.env.JWT_SECRET);
       res.send(token);
     } else {
       // utilisateur n'a pas été trouvé
@@ -28,6 +38,7 @@ const profilController = {
 
   registerUser: async (req, res) => {
     const newUser = req.body;
+    console.log(newUser);
 
     // reste à hasher le mdp
     const saltRounds = 10;
@@ -55,12 +66,20 @@ const profilController = {
     }
   },
   deleteUser: async (req, res) => {
-    const fakeId = 15;
+    const id = req.token.userId;
 
-    const result = await registerDataMapper.delete(fakeId);
+    const result = await registerDataMapper.delete(id);
 
     if (result) {
       res.json('Utilisateur a bien supprimé');
+    }
+  },
+  getUser: async (req, res) => {
+    const id = req.token.userId;
+    const result = await registerDataMapper.getUser(id);
+    console.log(result);
+    if (result) {
+      res.json(result);
     }
   },
 };

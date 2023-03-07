@@ -59,13 +59,40 @@ const registerDataMapper = {
   },
   login: async (email, password) => {
     const query = {
-      text: 'SELECT * FROM "user" WHERE "email" = $1 AND "password" = $2',
-      values: [email, password],
+      text: 'SELECT * FROM "user" WHERE "email" = $1',
+      values: [email],
     };
 
     try {
       const result = await client.query(query);
-      return result;
+      return result.rows[0];
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  },
+  getHash: async (email) => {
+    const query = {
+      text: 'SELECT "password" FROM "user" WHERE "email" = $1',
+      values: [email],
+    };
+
+    try {
+      const result = await client.query(query);
+      return result.rows[0];
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  },
+  getUser: async (id) => {
+    const query = {
+      text: 'SELECT "lastname", "firstname", "email", "role_id" FROM "user" WHERE id = $1',
+      values: [id],
+    };
+    try {
+      const result = await client.query(query);
+      return result.rows[0];
     } catch (error) {
       console.log(error);
       return false;

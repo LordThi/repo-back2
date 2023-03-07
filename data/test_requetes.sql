@@ -1,3 +1,4 @@
+-- SQLBook: Code
 /*CRUD USER*/
 
 /*insérer un nouvel utilisateur*/
@@ -17,7 +18,6 @@ DELETE FROM "user" WHERE "id" = 19;
 SELECT * FROM "user";
 
 
-
 /*afficher les allergènes de base*/
 SELECT * FROM "allergy" WHERE "allergens" = TRUE;
 
@@ -33,6 +33,13 @@ SELECT * FROM "user"
 JOIN "user_allergy" ON "user_allergy"."user_id" = "user"."id"
 JOIN "allergy" ON "user_allergy"."allergy_id" = "allergy"."id"
 WHERE "user"."id" = 1;
+
+/*recupérer les allergies personnelles*/
+SELECT A.*
+FROM "user_allergy" as UA
+LEFT JOIN "allergy" as A ON UA.allergy_id = A.id
+WHERE UA.user_id = 1;
+
 
 /*recherche ingrédient dans produit*/
 SELECT * FROM "product"
