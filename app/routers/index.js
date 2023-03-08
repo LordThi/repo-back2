@@ -1,4 +1,8 @@
 const express = require('express');
+const allintController = require('../controllers/allintController');
+const brandController = require('../controllers/brandController');
+const productController = require('../controllers/productController');
+const categoryController = require('../controllers/categoryController');
 const allergyController = require('../controllers/allergyController');
 const profilController = require('../controllers/profilController');
 const isLogger = require('../middlewares/isLogger');
@@ -7,6 +11,8 @@ const { login } = require('../validators/profil');
 
 const router = express.Router();
 
+// route de la home page
+router.get('/', allintController.homePage);
 
 // route pour enregistrer un nouvel utilisateur
 router.post('/register', profilController.registerUser);
