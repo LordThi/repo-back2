@@ -51,3 +51,4 @@ LEFT JOIN "allergy_product" ON "allergy_product"."product_id" = "product"."id"
 LEFT JOIN "allergy" ON "allergy_product"."allergy_id" = "allergy"."id"
 WHERE "product"."id" = '3017620425035';
 
+DELETE FROM "user_allergy" ("user_id", "allergy_id") VALUES (1, 2);

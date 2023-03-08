@@ -37,5 +37,6 @@ router.get('/search_category', categoryController.categoryPage);
 // router.get('/allergy', allergyController.getAll);
 router.get('/allergy/user', isLogger(), allergyController.getFromUser);
 router.post('/allergy/user', isLogger(), allergyController.postForUser);
+router.delete('/allergy/user', isLogger(), allergyController.deleteByUser);
 
 module.exports = router;

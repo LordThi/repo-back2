@@ -1,4 +1,4 @@
-const seachDataMapper = require('../dataMappers/searchDataMapper');
+const searchDataMapper = require('../dataMapper/registerDataMapper');
 
 const brandController = {
   brandPage: (req, res) => {

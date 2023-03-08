@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-const registerDataMapper = require('../dataMappers/registerDataMapper');
-=======
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const registerDataMapper = require('../dataMapper/registerDataMapper');
->>>>>>> 088f507aa003d27ab488d12f5032a302f71a247a
 
 const profilController = {
   loginUser: async (req, res) => {
