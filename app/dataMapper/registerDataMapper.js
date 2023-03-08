@@ -57,7 +57,7 @@ const registerDataMapper = {
       return false;
     }
   },
-  login: async (email, password) => {
+  login: async (email) => {
     const query = {
       text: 'SELECT * FROM "user" WHERE "email" = $1',
       values: [email],
