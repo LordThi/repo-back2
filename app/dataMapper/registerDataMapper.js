@@ -16,12 +16,12 @@ const registerDataMapper = {
       return false;
     }
   },
-  update: async (info) => {
+  update: async (info, idUser) => {
     const query = {
       text: `UPDATE "user"
       SET "email" = $1, "firstname" = $2, "lastname" = $3, "password" = $4
-      WHERE id = 1;`,
-      values: [info.email, info.firstname, info.lastname, info.password],
+      WHERE id = $5;`,
+      values: [info.email, info.firstname, info.lastname, info.password, idUser],
     };
     try {
       const result = await client.query(query);
