@@ -22,7 +22,7 @@ SELECT * FROM "user";
 SELECT * FROM "allergy" WHERE "allergens" = TRUE;
 
 /*inserer une allergy*/
-INSERT INTO "user_allergy" ("user_id", "allergy_id") VALUES (1, 15);
+INSERT INTO "user_allergy" ("user_id", "allergy_id") VALUES (2, 2);
 
 /*supprimer une allergie*/
 DELETE FROM "user_allergy" WHERE "allergy_id" = 4 AND "user_id" = 1;
@@ -35,7 +35,7 @@ DELETE FROM "user_allergy" WHERE "allergy_id" = 4 AND "user_id" = 1;
 SELECT * FROM "user"
 JOIN "user_allergy" ON "user_allergy"."user_id" = "user"."id"
 JOIN "allergy" ON "user_allergy"."allergy_id" = "allergy"."id"
-WHERE "user"."id" = 1;
+WHERE "user"."id" = 2;
 
 /*recupérer les allergies personnelles*/
 SELECT A.*

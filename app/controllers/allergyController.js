@@ -21,7 +21,7 @@ const allergyController = {
     // console.log(allergy);
     const result = await searchDataMapper.insertUserAllergy(allergyId, userId);
     if (result) {
-      res.send('success');
+      res.json('success');
     }
   },
   // supprimer une allergie de l'utilisateur
@@ -29,8 +29,10 @@ const allergyController = {
     const { allergyId } = req.body;
     const { userId } = req.token;
     const result = await searchDataMapper.delete(allergyId, userId);
-    if (result) {
-      res.send('success');
+    if (result.rowCount) {
+      res.json('delete: success');
+    } else {
+      res.json('Id user or Id allergy does not exist')
     }
   },
 };
