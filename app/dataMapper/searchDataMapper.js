@@ -55,7 +55,6 @@ const searchDataMapper = {
       text: 'DELETE FROM "user_allergy" WHERE "allergy_id" = $1 AND "user_id" = $2;',
       values: [allergyId, userId],
     };
-
     try {
       const result = await client.query(query);
       return result;
