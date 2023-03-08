@@ -21,7 +21,7 @@ SELECT * FROM "user";
 /*afficher les allergènes de base*/
 SELECT * FROM "allergy" WHERE "allergens" = TRUE;
 
-/*inserer une allergy*/
+/*inserer une liaison entre un user et une allergy*/
 INSERT INTO "user_allergy" ("user_id", "allergy_id") VALUES (2, 2);
 
 /*supprimer une allergie*/
@@ -52,6 +52,6 @@ WHERE "ingredients" LIKE '%tomate%';
 SELECT * FROM "product"
 LEFT JOIN "allergy_product" ON "allergy_product"."product_id" = "product"."id"
 LEFT JOIN "allergy" ON "allergy_product"."allergy_id" = "allergy"."id"
-WHERE "product"."id" = '3017620425035';
+WHERE "product"."name" = 'Nutella';
 
 DELETE FROM "user_allergy" ("user_id", "allergy_id") VALUES (1, 2);

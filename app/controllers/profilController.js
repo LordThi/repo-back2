@@ -52,13 +52,14 @@ const profilController = {
   },
   updateUser: async (req, res) => {
     const infoUserToUpdate = req.body;
+    const idUser = req.token.userId;
 
     const saltRounds = 10;
 
     const salt = await bcrypt.genSalt(saltRounds);
     infoUserToUpdate.password = await bcrypt.hash(infoUserToUpdate.password, salt);
 
-    const result = await registerDataMapper.update(infoUserToUpdate);
+    const result = await registerDataMapper.update(infoUserToUpdate, idUser);
 
     if (!result.isError) {
       res.json('modification(s) enregistrée(s)');
