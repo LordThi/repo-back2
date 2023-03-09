@@ -28,5 +28,5 @@ router.delete('/allergy/user', isLogger(), allergyController.deleteByUser); // D
 
 // Search product by product name
 router.get('/product', searchController.getFromProduct); // READ
-
+// test
 module.exports = router;
