@@ -3,7 +3,7 @@ const client = require('../connection_database');
 const searchDataMapper = {
   getProduct: async (productName) => {
     const query = {
-      text: 'SELECT * FROM "product" WHERE "name" = $1;',
+      text: 'SELECT * FROM "product" WHERE "name" ILIKE $1;',
       values: [productName],
     };
     try {
