@@ -5,6 +5,7 @@ const router = express.Router();
 // controller import
 const allergyController = require('../controllers/allergyController');
 const profilController = require('../controllers/profilController');
+const searchController = require('../controllers/searchController');
 
 // validation import
 const isLogger = require('../middlewares/isLogger');
@@ -26,5 +27,6 @@ router.post('/allergy/user', isLogger(), allergyController.postForUser); // CREA
 router.delete('/allergy/user', isLogger(), allergyController.deleteByUser); // DELETE
 
 // Search product by product name
+router.get('/product', searchController.getFromProduct); // READ
 
 module.exports = router;
