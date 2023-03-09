@@ -5,6 +5,7 @@ const router = express.Router();
 // controller import
 const allergyController = require('../controllers/allergyController');
 const profilController = require('../controllers/profilController');
+const searchController = require('../controllers/searchController');
 
 // validation import
 const isLogger = require('../middlewares/isLogger');
