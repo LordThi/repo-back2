@@ -11,7 +11,9 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(cors({
-  origin:'*'
+  origin: function(origin, callback){
+    callback(null, true)
+  }
 }));
 
 app.use(express.json());
