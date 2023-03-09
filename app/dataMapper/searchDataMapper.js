@@ -14,7 +14,32 @@ const searchDataMapper = {
       return false;
     }
   },
-
+    getCategory: async (categoryName) => {
+      const query = {
+        text: 'SELECT * FROM "category" WHERE "name" ILIKE $1 ;',
+        values: [categoryName],
+      };
+      try {
+        const result = await client.query(query);
+        return result.rows;
+      } catch (error) {
+        console.log(error);
+        return false;
+      }
+    },
+    getBrand: async (brandName) => {
+      const query = {
+        text: 'SELECT * FROM "brand" WHERE "name" ILIKE $1;',
+        values: [brandName],
+      };
+      try {
+        const result = await client.query(query);
+        return result.rows;
+      } catch (error) {
+        console.log(error);
+        return false;
+      }
+    }
 };
 
 module.exports = searchDataMapper;

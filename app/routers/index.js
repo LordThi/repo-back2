@@ -29,4 +29,10 @@ router.delete('/allergy/user', isLogger(), allergyController.deleteByUser); // D
 // Search product by product name
 router.get('/product', searchController.getFromProduct); // READ
 
+// Search cathegory by cadegory name
+router.get('/category', searchController.getFromCategory); // READ
+
+// Search brand by brand name
+router.get('/brand', searchController.getFromBrand); // READ
+
 module.exports = router;
