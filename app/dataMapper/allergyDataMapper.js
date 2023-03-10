@@ -1,5 +1,8 @@
 const client = require('../connection_database');
 
+
+
+
 const allergyDataMapper = {
   select: async (allergy) => {
     const query = {
@@ -29,7 +32,7 @@ const allergyDataMapper = {
 
     try {
       const result = await client.query(query);
-      return result;
+      return result.rows;
     } catch (error) {
       console.log(error);
       return false;
@@ -64,6 +67,21 @@ const allergyDataMapper = {
     }
   },
 
+  getDefaultAllergy: async () => {
+    const query = {
+      text: 'SELECT * FROM "allergy" WHERE "allergens" = true',
+    };
+
+    try {
+      const result = await client.query(query);
+      return result.rows;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
+
 };
 
 module.exports = allergyDataMapper;
+
