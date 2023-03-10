@@ -27,5 +27,13 @@ router.post('/allergy/user', isLogger(), allergyController.postForUser); // CREA
 router.delete('/allergy/user', isLogger(), allergyController.deleteByUser); // DELETE
 
 // Search product by product name
-//test
+
+router.get('/product', searchController.getFromProduct); // READ
+
+// Search cathegory by cadegory name
+router.get('/category', searchController.getFromCategory); // READ
+
+// Search brand by brand name
+router.get('/brand', searchController.getFromBrand); // READ
+
 module.exports = router;
