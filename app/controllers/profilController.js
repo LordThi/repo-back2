@@ -120,11 +120,11 @@ const profilController = {
     const result = cleanArrays(userAllergy, defaultAllergy)
 
     // on rajoute les infos du user dans l'objet à renvoyer
-    result.userIfos = userInfos
+    result.userInfos = userInfos
 
 
-    if (userInfos) {
-      res.json(userInfos);
+    if (result) {
+      res.json(result);
     }
   },
 };
