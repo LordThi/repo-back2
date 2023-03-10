@@ -22,7 +22,7 @@ router.delete('/profil', isLogger(), profilController.deleteUser); // DELETE
 router.post('/login', isValid(login), profilController.loginUser); // connection + création et envoi d'un token
 
 // CRD Allergy
-router.get('/allergy/user', isLogger(), allergyController.getFromUser); // READ
+router.get('/allergy', allergyController.getAll); // READ // return default allergy
 router.post('/allergy/user', isLogger(), allergyController.postForUser); // CREATE
 router.delete('/allergy/user', isLogger(), allergyController.deleteByUser); // DELETE
 
