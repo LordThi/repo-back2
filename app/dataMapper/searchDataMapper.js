@@ -29,7 +29,9 @@ const searchDataMapper = {
     },
     getBrand: async (brandName) => {
       const query = {
-        text: 'SELECT * FROM "brand" WHERE "name" ILIKE $1;',
+        text: `SELECT * FROM "brand"
+        JOIN "product" ON "product"."brand_id" = "brand"."id"
+        WHERE "brand"."name" ILIKE $1;`,
         values: [brandName],
       };
       try {
