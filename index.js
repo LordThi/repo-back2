@@ -19,7 +19,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use(router);
-
+//test
 app.listen(port, () => {
   logger.log(`Server ready: http://localhost:${port}`);
 });
