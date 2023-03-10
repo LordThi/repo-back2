@@ -3,9 +3,9 @@ const allergyDataMapper = require('../dataMapper/allergyDataMapper');
 const allergyController = {
 // retourne toutes les allergies
   getAll: async (req, res) => {
-    const result = await allergyDataMapper.selectFirstsAllergies();
+    const result = await allergyDataMapper.getDefaultAllergy();
     if (result) {
-      res.send('ALLERGIE(S) SELECTIONNEE(S)');
+      res.json(result);
     }
   },
   // retourner les allergies de l'utilisateur connecté
