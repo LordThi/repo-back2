@@ -1,5 +1,35 @@
 const client = require('../connection_database');
 
+// Fonction pour nettoyer les infos d'un user : {userAllergy, defaultAllery}
+const cleanArrays = (userArray, defaultArray) => {
+
+  const filteredUserArray = userArray.filter((user) => {
+
+      let match = false;
+
+      defaultArray.forEach((def) => {
+          if (user.id === def.id) {
+              def.isChecked = true
+              match = true
+          } else {
+              def.isChecked = false
+          }
+      })
+
+      if (!match) {
+          return user
+      }
+
+  })
+
+
+  return {
+      userAllergens: filteredUserArray,
+      defaultAllergens: defaultArray
+  }
+}
+
+
 const allergyDataMapper = {
   select: async (allergy) => {
     const query = {
@@ -29,7 +59,7 @@ const allergyDataMapper = {
 
     try {
       const result = await client.query(query);
-      return result;
+      return result.rows;
     } catch (error) {
       console.log(error);
       return false;
@@ -64,6 +94,21 @@ const allergyDataMapper = {
     }
   },
 
+  getDefaultAllergy: async () => {
+    const query = {
+      text: 'SELECT * FROM "allergy" WHERE "allergens" = true',
+    };
+
+    try {
+      const result = await client.query(query);
+      return result.rows;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
+
 };
 
 module.exports = allergyDataMapper;
+

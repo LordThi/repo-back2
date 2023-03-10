@@ -1,6 +1,37 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const registerDataMapper = require('../dataMapper/registerDataMapper');
+const allergyDatamapper = require('../dataMapper/allergyDataMapper')
+
+// Fonction pour nettoyer les infos d'un user : {userAllergy, defaultAllery}
+const cleanArrays = (userArray, defaultArray) => {
+
+  const filteredUserArray = userArray.filter((user) => {
+
+      let match = false;
+
+      defaultArray.forEach((def) => {
+          if (user.id === def.id) {
+              def.isChecked = true
+              match = true
+          } else {
+              def.isChecked = false
+          }
+      })
+
+      if (!match) {
+          return user
+      }
+
+  })
+
+
+  return {
+      userAllergens: filteredUserArray,
+      defaultAllergens: defaultArray
+  }
+}
+
 
 const profilController = {
   loginUser: async (req, res) => {
@@ -10,6 +41,7 @@ const profilController = {
 
     // on récupère le mdp hashé qui correspond à cet email
     const hash = await registerDataMapper.getHash(email);
+    console.log(hash)
 
     // on compare le mdp envoyé par le front et le mdp hashé
     const checkPassword = await bcrypt.compare(password, hash.password);
@@ -76,12 +108,23 @@ const profilController = {
       res.json('Utilisateur a bien supprimé');
     }
   },
+
   getUser: async (req, res) => {
     const id = req.token.userId;
-    const result = await registerDataMapper.getUser(id);
-    console.log(result);
-    if (result) {
-      res.json(result);
+
+    // on récupère les infos du user, ses allergy perso et la liste des defaultAllergy
+    const userInfos = await registerDataMapper.getUser(id);
+    const userAllergy = await allergyDatamapper.selectAllergiesFromUser(id)
+    const defaultAllergy = await allergyDatamapper.getDefaultAllergy()
+
+    const result = cleanArrays(userAllergy, defaultAllergy)
+
+    // on rajoute les infos du user dans l'objet à renvoyer
+    result.userIfos = userInfos
+
+
+    if (userInfos) {
+      res.json(userInfos);
     }
   },
 };
