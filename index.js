@@ -16,11 +16,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(cors({
-  origin: function(origin, callback){
-    callback(null, true)
-  }
-}));
+app.use(cors());
 
 app.use(express.json());
 
